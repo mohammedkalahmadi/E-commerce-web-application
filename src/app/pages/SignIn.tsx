@@ -1,0 +1,201 @@
+import { useNavigate } from 'react-router';
+import svgPaths from "../../imports/svg-n19al1amqu";
+
+function Time() {
+  return (
+    <div className="content-stretch flex flex-[1_0_0] h-[22px] items-center justify-center min-h-px min-w-px pt-[2px] relative" data-name="Time">
+      <p className="font-['SF_Pro:Semibold',sans-serif] font-[590] leading-[22px] relative shrink-0 text-[17px] text-black text-center" style={{ fontVariationSettings: "'wdth' 100" }}>
+        9:41
+      </p>
+    </div>
+  );
+}
+
+function Battery() {
+  return (
+    <div className="h-[13px] relative shrink-0 w-[27.328px]" data-name="Battery">
+      <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 27.328 13">
+        <g id="Battery">
+          <rect height="12" id="Border" opacity="0.35" rx="3.8" stroke="var(--stroke-0, black)" width="24" x="0.5" y="0.5" />
+          <path d={svgPaths.p3bbd9700} fill="var(--fill-0, black)" id="Cap" opacity="0.4" />
+          <rect fill="var(--fill-0, black)" height="9" id="Capacity" rx="2.5" width="21" x="2" y="2" />
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+function Levels() {
+  return (
+    <div className="content-stretch flex flex-[1_0_0] gap-[7px] h-[22px] items-center justify-center min-h-px min-w-px pt-px relative" data-name="Levels">
+      <div className="h-[12.226px] relative shrink-0 w-[19.2px]" data-name="Cellular Connection">
+        <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 19.2 12.2264">
+          <path clipRule="evenodd" d={svgPaths.p1e09e400} fill="var(--fill-0, black)" fillRule="evenodd" id="Cellular Connection" />
+        </svg>
+      </div>
+      <div className="h-[12.328px] relative shrink-0 w-[17.142px]" data-name="Wifi">
+        <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 17.1417 12.3283">
+          <path clipRule="evenodd" d={svgPaths.p18b35300} fill="var(--fill-0, black)" fillRule="evenodd" id="Wifi" />
+        </svg>
+      </div>
+      <Battery />
+    </div>
+  );
+}
+
+export default function SignIn() {
+  const navigate = useNavigate();
+
+  const handleSignIn = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Mock sign in - in real app would authenticate
+    navigate('/profile');
+  };
+
+  return (
+    <div className="bg-white relative size-full overflow-y-auto" data-name="Sign in page">
+      <div className="-translate-x-1/2 absolute content-stretch flex items-start left-1/2 top-0" data-name="Status Bar">
+        <div className="content-stretch flex gap-[154px] items-center justify-center pb-[19px] pt-[21px] px-[16px] relative shrink-0 w-[402px]" data-name="Status Bar">
+          <Time />
+          <Levels />
+        </div>
+      </div>
+      
+      <p className="-translate-x-1/2 absolute font-['Cairo:Bold',sans-serif] font-bold h-[38px] leading-[normal] left-[calc(16.67%+133.5px)] not-italic text-[24px] text-black text-center top-[62px] w-[153px] whitespace-pre-wrap">Sign In</p>
+      
+      <form onSubmit={handleSignIn}>
+        <div className="absolute h-[68px] left-[26px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-[200px] w-[344px]" data-name="Text field">
+          <div className="absolute bg-white border border-[#040303] border-solid inset-[27.94%_0_0_0] rounded-[50px]" />
+          <input 
+            type="email"
+            placeholder="Email"
+            className="absolute inset-[27.94%_10%_0_6.44%] font-['Cairo:Bold',sans-serif] font-bold text-[16px] text-[#040303] bg-transparent outline-none"
+          />
+          <div className="absolute flex flex-col font-['Cairo:Bold',sans-serif] font-bold inset-[0_10.23%_58.82%_6.44%] justify-end leading-[0] not-italic text-[#040303] text-[24px]">
+            <p className="leading-[normal] whitespace-pre-wrap">Email</p>
+          </div>
+        </div>
+        
+        <div className="absolute h-[68px] left-[26px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-[296px] w-[344px]" data-name="Text field">
+          <div className="absolute bg-white border border-[#040303] border-solid inset-[27.94%_0_0_0] rounded-[50px]" />
+          <input 
+            type="password"
+            placeholder="Password"
+            className="absolute inset-[27.94%_10%_0_6.44%] font-['Cairo:Bold',sans-serif] font-bold text-[16px] text-[#040303] bg-transparent outline-none"
+          />
+          <div className="absolute flex flex-col font-['Cairo:Bold',sans-serif] font-bold inset-[0_10.23%_58.82%_6.44%] justify-end leading-[0] not-italic text-[#040303] text-[24px]">
+            <p className="leading-[normal] whitespace-pre-wrap">Password</p>
+          </div>
+        </div>
+        
+        <button type="submit" className="absolute h-[45px] left-[44px] top-[439px] w-[312px] bg-[#070606] rounded-[14px] cursor-pointer" data-name="Button">
+          <div className="absolute flex flex-col font-['Cairo:Bold',sans-serif] font-bold inset-[24.44%_18.27%_22.22%_18.27%] justify-center leading-[0] not-italic text-[24px] text-center text-white">
+            <p className="leading-[normal] whitespace-pre-wrap">Sign in</p>
+          </div>
+        </button>
+      </form>
+      
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute flex flex-col font-['Cairo:Medium',sans-serif] font-medium h-[47px] justify-center leading-[0] left-[97px] not-italic text-[16px] text-black text-center top-[583.5px] w-[114px]">
+        <p className="leading-[normal] whitespace-pre-wrap">Remember me</p>
+      </div>
+      
+      <button className="-translate-y-1/2 absolute flex flex-col font-['Cairo:Medium',sans-serif] font-medium h-[32px] justify-center leading-[0] left-[calc(50%+49px)] not-italic text-[#e60000] text-[16px] top-[583px] w-[132px] cursor-pointer">
+        <p className="leading-[normal] whitespace-pre-wrap">Forget password?</p>
+      </button>
+      
+      <div className="absolute left-[11px] size-[29px] top-[569px]" data-name="Empty box">
+        <div className="absolute inset-[9.09%]" data-name="Vector">
+          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 23.7273 23.7273">
+            <path d={svgPaths.pee57300} fill="var(--fill-0, black)" id="Vector" />
+          </svg>
+        </div>
+      </div>
+      
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute flex flex-col font-['Cairo:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] left-[calc(16.67%+140.5px)] not-italic text-[24px] text-black text-center top-[630px] w-[155px]">
+        <p className="leading-[normal] whitespace-pre-wrap">Or Sign in with</p>
+      </div>
+      
+      <div className="absolute h-0 left-[-1px] top-[630px] w-[125px]">
+        <div className="absolute inset-[-3px_0_0_0]">
+          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 125 3">
+            <line id="Line 11" stroke="var(--stroke-0, black)" strokeWidth="3" x2="125" y1="1.5" y2="1.5" />
+          </svg>
+        </div>
+      </div>
+      
+      <div className="absolute h-0 left-[calc(66.67%+22px)] top-[630px] w-[110px]">
+        <div className="absolute inset-[-3px_0_0_0]">
+          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 110 3">
+            <line id="Line 12" stroke="var(--stroke-0, black)" strokeWidth="3" x2="110" y1="1.5" y2="1.5" />
+          </svg>
+        </div>
+      </div>
+      
+      <button className="absolute left-[calc(33.33%+39px)] size-[45px] top-[695px] cursor-pointer" data-name="Facebook">
+        <div className="absolute inset-[6.25%]" data-name="bg">
+          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 39.375 39.375">
+            <circle cx="19.6875" cy="19.6875" fill="url(#paint0_linear_1_1723)" id="bg" r="19.6875" />
+            <defs>
+              <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_1_1723" x1="19.6875" x2="19.6875" y1="0" y2="39.2582">
+                <stop stopColor="#18ACFE" />
+                <stop offset="1" stopColor="#0163E0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div className="absolute bottom-[6.25%] left-[31.25%] right-[31.25%] top-1/4" data-name="f">
+          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16.875 30.9375">
+            <path d={svgPaths.p210efb00} fill="var(--fill-0, white)" id="f" />
+          </svg>
+        </div>
+      </button>
+      
+      <button className="absolute inset-[79.52%_63.68%_15.33%_25.12%] overflow-clip cursor-pointer" data-name="Google">
+        <div className="absolute inset-[41.09%_0_12.07%_51%]" data-name="Vector">
+          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 22.05 21.0815">
+            <path d={svgPaths.p3c2376d0} fill="var(--fill-0, #4280EF)" id="Vector" />
+          </svg>
+        </div>
+        <div className="absolute inset-[59.67%_15.22%_0.11%_5.44%]" data-name="Vector">
+          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 35.7 18.0978">
+            <path d={svgPaths.p1ff100} fill="var(--fill-0, #34A353)" id="Vector" />
+          </svg>
+        </div>
+        <div className="absolute inset-[27.61%_77.67%_27.61%_0.03%]" data-name="Vector">
+          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 10.0375 20.1522">
+            <path d={svgPaths.p1acf8a80} fill="var(--fill-0, #F6B704)" id="Vector" />
+          </svg>
+        </div>
+        <div className="absolute inset-[0.11%_14.89%_59.57%_5.44%]" data-name="Vector">
+          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 35.85 18.1476">
+            <path d={svgPaths.p1bf8780} fill="var(--fill-0, #E54335)" id="Vector" />
+          </svg>
+        </div>
+      </button>
+      
+      <button className="absolute left-[calc(50%+57px)] overflow-clip size-[45px] top-[695px] cursor-pointer" data-name="apple">
+        <div className="absolute inset-[6.25%]" data-name="bg">
+          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 39.375 39.375">
+            <path d={svgPaths.pec4c00} fill="var(--fill-0, #283544)" id="bg" />
+          </svg>
+        </div>
+        <div className="absolute inset-[21.88%_28.13%_28.13%_28.13%]" data-name="apple">
+          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 19.6875 22.5">
+            <path d={svgPaths.p27c71e00} fill="var(--fill-0, white)" id="apple" />
+          </svg>
+        </div>
+      </button>
+      
+      <button 
+        className="-translate-y-1/2 absolute flex flex-col font-['Cairo:Medium',sans-serif] font-medium h-[42px] justify-center leading-[0] left-[calc(16.67%+11px)] not-italic text-[0px] text-black top-[793px] w-[259px] cursor-pointer"
+        onClick={() => navigate('/signup')}
+      >
+        <p className="text-[16px] whitespace-pre-wrap">
+          <span className="leading-[normal]">You don't have an account?</span>
+          <span className="decoration-solid font-['Cairo:Medium',sans-serif] font-medium leading-[normal] not-italic underline">{` `}</span>
+          <span className="decoration-solid font-['Cairo:Bold',sans-serif] font-bold leading-[normal] not-italic underline">Sign up</span>
+        </p>
+      </button>
+    </div>
+  );
+}
